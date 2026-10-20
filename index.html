@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thời trang Việt xanh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1f7a4d;--bg2:#17603c;--ink:#fff3d6;--card:#fff3d6;--cardink:#173a28;--pink:#f4769b;--gold:#f6b81a;--blue:#2b4c9b;--sky:#a8dcf5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15553a;--bg2:#0f4029;--card:#f3e6c4;--sky:#8cc4dc}}
+:root[data-theme="dark"]{--bg:#15553a;--bg2:#0f4029;--card:#f3e6c4;--sky:#8cc4dc}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Baloo 2","Be Vietnam Pro",sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:72px 20px}
+h2{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;text-align:center;margin-bottom:12px}
+.lead{max-width:60ch;margin:0 auto 36px;text-align:center;opacity:.92}
+.pill{display:inline-block;border:3px solid var(--cardink);background:var(--card);color:var(--cardink);font:800 1rem "Baloo 2",sans-serif;padding:8px 24px;border-radius:999px;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 var(--cardink)}
+.pill:active{transform:translateY(3px);box-shadow:0 1px 0 var(--cardink)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg2)}
+nav b{font:800 1.1rem "Baloo 2",sans-serif}
+nav div{display:flex;gap:14px;overflow-x:auto;font-size:.9rem}
+nav a{text-decoration:none;white-space:nowrap}
+/* hero */
+.hero{position:relative;min-height:max(100svh,600px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 16px 0;background:var(--hbg) center bottom/cover no-repeat,#2d8fd5;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero h1{font-size:clamp(3rem,12vw,7.5rem);font-weight:800;color:var(--ink);text-shadow:0 5px 0 rgba(23,58,40,.35);position:relative;z-index:2;animation:drop 1s cubic-bezier(.2,1.5,.4,1) both}
+.hero p{position:relative;z-index:2;font:600 1.15rem "Baloo 2",sans-serif;color:#0e3a2a;margin:10px 0 0;animation:fade .8s .5s both}
+
+.stage::after{content:"";position:absolute;left:12%;right:12%;bottom:-9%;height:9%;background:radial-gradient(rgba(0,0,0,.35),transparent 70%);animation:sh 4s ease-in-out infinite}
+.hero .pill{position:absolute;z-index:3;bottom:8%;left:50%;translate:-50% 0;animation:hop 2s ease-in-out infinite}
+/* marquee */
+.marq{background:var(--gold);color:var(--cardink);overflow:hidden;white-space:nowrap;border-block:3px solid var(--cardink)}
+.marq span{display:inline-block;padding:10px 0;font:800 1.6rem "Baloo 2",sans-serif;animation:run 28s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marq span{animation:none}}
+/* journey */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);color:var(--cardink);border-radius:18px;padding:16px 18px 16px 70px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font:800 1.4rem "Baloo 2"}
+.steps b{font:800 1.2rem "Baloo 2"}
+.steps small{display:block;color:#3b5d4a;font-size:.92rem}
+/* fibers */
+.fiber{background:var(--card);color:var(--cardink);border-radius:20px;border:3px solid var(--cardink);box-shadow:8px 8px 0 var(--gold);overflow:hidden}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;padding:14px;background:#e9d9ae}
+.tabs button{font:800 .95rem "Baloo 2";border:2px solid var(--cardink);background:#fff3d6;color:var(--cardink);border-radius:999px;padding:4px 16px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--bg);color:var(--ink)}
+.fbody{padding:22px;display:grid;gap:20px;grid-template-columns:1fr 1fr}
+.fbody h3{font-size:2rem;color:var(--bg2)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{text-align:left;font-weight:600;padding:6px 0;border-bottom:1px solid #c8b98c;width:46%}
+td{padding:6px 0;border-bottom:1px solid #c8b98c}
+.dots i{display:inline-block;width:12px;height:12px;border-radius:50%;background:#c8b98c;margin-right:3px}
+.dots i.on{background:var(--pink)}
+.pc{display:flex;gap:10px;margin-top:12px;font-size:.92rem}
+.pc div{flex:1;border-radius:12px;padding:8px 10px}
+.pc .u{background:#cfeedd}.pc .n{background:#fbd9c8}
+.note{font-size:.85rem;opacity:.85;margin-top:12px;text-align:center}
+@media(max-width:720px){.fbody{grid-template-columns:1fr}}
+/* tips */
+.tips{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;padding:10px 0}
+.tip{width:210px;min-height:230px;padding:18px;border-radius:14px;color:var(--cardink);transition:transform .2s}
+.tip:nth-child(1){background:var(--gold);transform:rotate(-4deg)}.tip:nth-child(2){background:var(--pink);transform:rotate(3deg)}
+.tip:nth-child(3){background:var(--sky);transform:rotate(-2deg)}.tip:nth-child(4){background:var(--card);transform:rotate(4deg)}
+.tip:nth-child(5){background:#ffd1a3;transform:rotate(-3deg)}
+.tip:hover{transform:rotate(0) scale(1.04)}
+.tip h3{font-size:1.5rem;margin:6px 0}.tip p{margin:0;font-size:.95rem}
+.tip em{font:800 2.6rem "Baloo 2";font-style:normal;opacity:.5}
+/* local brand */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:var(--bg2);border:3px solid var(--ink);border-radius:20px;padding:22px}
+.box h3{font-size:1.6rem;margin-bottom:8px}
+.box ul{padding-left:18px;margin:8px 0}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+/* quiz */
+.quiz{background:var(--card);color:var(--cardink);border-radius:20px;padding:24px;max-width:640px;margin:0 auto;text-align:center;border:3px solid var(--cardink);box-shadow:8px 8px 0 var(--pink)}
+.quiz h3{font-size:1.7rem;margin-bottom:14px}
+.quiz .opt{display:block;width:100%;margin:8px 0;text-align:left;font:600 1rem "Be Vietnam Pro";background:#fff;border:2px solid var(--cardink);border-radius:14px;padding:10px 14px;color:var(--cardink);cursor:pointer}
+.quiz .opt:hover{background:var(--gold)}
+.bar{height:10px;border-radius:9px;background:#e1d2a6;margin-bottom:14px;overflow:hidden}.bar i{display:block;height:100%;background:var(--pink);width:0;transition:width .3s}
+/* gloss */
+details{background:var(--bg2);border-radius:14px;padding:12px 18px;margin:10px 0;border:2px solid rgba(255,243,214,.3)}
+summary{cursor:pointer;font:800 1.15rem "Baloo 2"}
+details p{margin:8px 0 0}
+/* footer */
+.foot{background:var(--sky);color:#0e2f4a;text-align:center;padding:90px 20px 40px;position:relative;margin-top:40px}
+.foot::before{content:"";position:absolute;left:0;right:0;top:-38px;height:40px;background:var(--sky);-webkit-mask:radial-gradient(28px 20px at 28px 40px,#000 98%,transparent) 0 0/56px 40px repeat-x;mask:radial-gradient(28px 20px at 28px 40px,#000 98%,transparent) 0 0/56px 40px repeat-x}
+.foot h2{color:var(--bg2)}
+.foot .pill{margin:6px}
+.src{font-size:.82rem;max-width:70ch;margin:24px auto 0;opacity:.85}
+</style><style>:root{--hbg:url(assets/hero-bg.webp)}</style><style>
+.wrap,.marq,.foot{position:relative;z-index:1}
+@keyframes spin{from{transform:perspective(900px) rotateY(0)}to{transform:perspective(900px) rotateY(360deg)}}
+@keyframes bob{50%{transform:translateY(-16px)}}
+@keyframes sh{50%{transform:scaleX(.8);opacity:.6}}
+@keyframes drop{from{opacity:0;transform:translateY(-50px) scale(.9)}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+@keyframes hop{50%{transform:translateY(-8px)}}
+@keyframes drift{from{translate:-30vw}to{translate:130vw}}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.25)}}
+@keyframes wave{to{-webkit-mask-position:56px 0;mask-position:56px 0}}
+@keyframes fall{to{transform:translate(var(--dx),115vh) rotate(540deg)}}
+#leaves{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.lf{position:absolute;top:-40px;border-radius:0 100% 0 100%;opacity:.35;animation:fall linear infinite}
+nav::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:var(--p,0%);background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 16px)}
+.rv{opacity:0;translate:0 30px;transition:opacity .7s,translate .7s}
+.rv.in{opacity:1;translate:0 0}
+.tip.rv{transition:opacity .7s,translate .7s,transform .2s}
+h2.rv::after{content:"";display:block;height:4px;width:0;margin:10px auto 0;background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 16px);transition:width .9s .3s}
+h2.in::after{width:150px}
+.steps li.in::before{animation:pop .5s .2s both}
+.fbody>*,.quiz>*{animation:fade .4s both}
+.dots i.on{animation:pop .4s both}.dots i:nth-child(2){animation-delay:.08s}.dots i:nth-child(3){animation-delay:.16s}.dots i:nth-child(4){animation-delay:.24s}.dots i:nth-child(5){animation-delay:.32s}
+.quiz .opt{transition:transform .15s,background .15s}.quiz .opt:hover{transform:translateX(6px)}
+.foot::before{animation:wave 4s linear infinite}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;translate:none}#leaves{display:none}}
+</style><style>
+.stage{position:absolute;z-index:2;left:50%;top:40%;width:clamp(200px,30vw,400px);aspect-ratio:.9;translate:-50% 0;animation:bob 4s ease-in-out infinite}
+.cd{position:absolute;z-index:1;left:0;height:auto;pointer-events:none;user-select:none;filter:drop-shadow(0 6px 8px rgba(20,60,110,.15));animation:drift linear infinite,cbob 7s ease-in-out infinite alternate}
+@keyframes drift{from{translate:-360px}to{translate:calc(100vw + 60px)}}
+nav{padding:6px 16px}.brand{flex:none;display:block;line-height:0}.brand img{height:46px;width:auto;display:block}
+.stage .w{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 14px rgba(0,0,0,.28));animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:perspective(900px) rotateY(-12deg) rotateZ(-2deg)}50%{transform:perspective(900px) rotateY(12deg) rotateZ(2deg)}}
+@keyframes cbob{to{transform:translateY(12px)}}
+.hero h1{text-shadow:0 5px 0 rgba(23,58,40,.4),0 0 18px rgba(14,58,42,.35)}
+
+</style>
+</head>
+<body>
+<nav><a class="brand" href="#top"><img src="assets/logo.webp" alt="Quân trang vang danh"></a><div><a href="#hanhtrinh">Hành trình</a><a href="#soi">Sợi Việt</a><a href="#meo">Mẹo xanh</a><a href="#brand">Local brand</a><a href="#quiz">Quiz</a><a href="#thuatngu">Thuật ngữ</a></div></nav><div id="leaves" aria-hidden="true"></div>
+<header class="hero"><img class="cd" alt="" src="assets/cloud-1.webp" style="top:5%;width:min(14vw,210px);animation-duration:160s,6s;animation-delay:-30s,0s;opacity:0.88"><img class="cd" alt="" src="assets/cloud-2.webp" style="top:13%;width:min(22vw,330px);animation-duration:120s,7s;animation-delay:-75s,0s;opacity:0.92"><img class="cd" alt="" src="assets/cloud-3.webp" style="top:22%;width:min(16vw,250px);animation-duration:140s,9s;animation-delay:-110s,0s;opacity:0.9"><img class="cd" alt="" src="assets/cloud-4.webp" style="top:30%;width:min(18vw,270px);animation-duration:95s,8s;animation-delay:-20s,0s;opacity:0.95"><img class="cd" alt="" src="assets/cloud-5.webp" style="top:36%;width:min(26vw,390px);animation-duration:78s,10s;animation-delay:-45s,0s;opacity:1"><img class="cd" alt="" src="assets/cloud-6.webp" style="top:42%;width:min(28vw,420px);animation-duration:64s,11s;animation-delay:-12s,0s;opacity:1">
+<h1>THỜI TRANG<br>VIỆT XANH</h1>
+<p>Chiếc áo bạn mặc hôm nay đã đi bao xa?</p>
+<div class="stage" aria-hidden="true"><img class="w" alt="" src="assets/shirt-white.webp"></div>
+<a class="pill" href="#hanhtrinh">Khám phá ↓</a>
+</header>
+
+<div class="marq" aria-hidden="true"><span>MẶC LÂU HƠN ✿ MUA ÍT HƠN ✿ SỬA THAY VÌ VỨT ✿ HỎI NGUỒN GỐC ✿ MẶC LÂU HƠN ✿ MUA ÍT HƠN ✿ SỬA THAY VÌ VỨT ✿ HỎI NGUỒN GỐC ✿ </span></div>
+
+<section id="hanhtrinh" class="wrap">
+<h2>Hành trình một chiếc áo</h2>
+<p class="lead">Áo nơ Coquette giá 300.000đ có thể “hết thời” sau vài tháng dù vải còn mới tinh. Vậy một chiếc áo đi qua những đâu trước khi đến tủ đồ của bạn?</p>
+<ol class="steps">
+<li><b>Nguyên liệu</b><small>Việt Nam còn nhập nhiều vải và phụ liệu. Xu hướng mới: sợi tự nhiên, vật liệu tái chế.</small></li>
+<li><b>Thiết kế</b><small>Khâu tạo giá trị sáng tạo: áo dài, lụa, thổ cẩm, họa tiết dân gian thành đồ hiện đại.</small></li>
+<li><b>Sản xuất</b><small>Thế mạnh gia công của Việt Nam, nhưng có thể tốn nước, năng lượng và tạo nhiều vải thừa.</small></li>
+<li><b>Thương hiệu và marketing</b><small>Thứ bạn trả tiền không chỉ là vải mà còn là phong cách và câu chuyện.</small></li>
+<li><b>Phân phối</b><small>Cửa hàng, sàn thương mại điện tử, TikTok Shop.</small></li>
+<li><b>Tiêu dùng</b><small>Bạn mua, mặc, và quyết định chiếc áo sống bao lâu.</small></li>
+<li><b>Tái sử dụng và tái chế</b><small>Từ “mua – dùng – vứt” sang “dùng – sửa – tái sử dụng – thu hồi – tái chế”.</small></li>
+</ol>
+</section>
+
+<section id="soi" class="wrap" style="padding-top:0">
+<h2>Thư viện sợi Việt</h2>
+<p class="lead">Chọn một loại sợi để xem cả ưu lẫn nhược điểm. Một chất liệu “xanh” vẫn có giới hạn.</p>
+<div class="fiber">
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="fbody" id="fbody" role="tabpanel"></div>
+</div>
+<p class="note">Mức độ (chấm hồng) mang tính tham khảo để so sánh, tùy cách dệt và xử lý của từng nhà sản xuất. Bạn nên kiểm tra nhãn mác và hỏi nơi bán.</p>
+</section>
+
+<section id="meo" class="wrap" style="padding-top:0">
+<h2>Mẹo xanh</h2>
+<p class="lead">Năm việc nhỏ, ai cũng làm được. Không cần hoàn hảo, chỉ cần bắt đầu.</p>
+<div class="tips">
+<div class="tip"><em>01</em><h3>Mua thông minh</h3><p>Hỏi “mình sẽ mặc ít nhất 30 lần chứ?” trước khi thanh toán.</p></div>
+<div class="tip"><em>02</em><h3>Mặc lâu hơn</h3><p>Giặt nhẹ, phơi đúng cách. Thử thách 30 ngày mặc lại, không mua mới.</p></div>
+<div class="tip"><em>03</em><h3>Sửa và upcycle</h3><p>Đứt chỉ, tuột nút, rộng eo: tiệm sửa đồ rẻ hơn mua mới.</p></div>
+<div class="tip"><em>04</em><h3>Second-hand</h3><p>Đổi đồ với bạn bè, đi chợ đồ cũ, tổ chức swap party ở lớp.</p></div>
+<div class="tip"><em>05</em><h3>Nhận diện greenwashing</h3><p>Nhãn “xanh” mà không nói rõ chất liệu, nguồn gốc, chứng nhận thì nên nghi ngờ.</p></div>
+</div>
+</section>
+
+<section id="brand" class="wrap" style="padding-top:0">
+<h2>Local brand và những câu chuyện</h2>
+<p class="lead">Thị trường đang đổi: nhiều thương hiệu nội địa có tên tuổi đã đóng cửa sau hơn 10 năm. Bài học chung được nhắc lại là khó tồn tại nếu không có sự khác biệt.</p>
+<div class="two">
+<div class="box"><h3>Vì sao brand đóng cửa?</h3><ul><li>Quy mô nhỏ, vốn hạn chế</li><li>Dễ chạy theo xu hướng ngắn hạn</li><li>Hàng nhái, sao chép thiết kế</li><li>Cạnh tranh với thời trang giá rẻ và thương hiệu quốc tế</li></ul><small>Nguồn: VietNamNet, 2026.</small></div>
+<div class="box"><h3>Một ví dụ: X28 và Belluni</h3><p>Tổng công ty 28 theo đuổi chuỗi khép kín từ dệt, nhuộm đến may, và thương hiệu nam Belluni (2011) đưa sợi tre (2015) và sợi sen (2019) vào áo công sở.</p><p><small>Thông tin lấy từ đề án nghiên cứu và phỏng vấn lãnh đạo X28. Đây chỉ là một ví dụ, không phải quảng cáo hay xếp hạng. Còn nhiều thương hiệu và làng nghề khác đáng tìm hiểu.</small></p></div>
+</div>
+</section>
+
+<section id="quiz" class="wrap" style="padding-top:0">
+<h2>Tủ đồ của bạn xanh cỡ nào?</h2>
+<p class="lead">5 câu, chưa đến 1 phút.</p>
+<div class="quiz" id="quizbox" aria-live="polite"></div>
+</section>
+
+<section id="cd" class="wrap" style="padding-top:0">
+<h2>Cộng đồng</h2>
+<p class="lead">Đăng outfit tái sử dụng của bạn với hashtag <b>#MacLaiMacVui</b> (tên gợi ý, bạn có thể đổi). Bài hay sẽ được chọn lên đây.</p>
+<p style="text-align:center"><a class="pill" href="#lienhe">Tham gia</a></p>
+</section>
+
+<section id="thuatngu" class="wrap" style="padding-top:0">
+<h2>Thuật ngữ</h2>
+<p class="lead">Những từ bạn sẽ gặp khi đọc về thời trang bền vững.</p>
+<details><summary>ESG</summary><p>Ba tiêu chí đánh giá doanh nghiệp: môi trường, xã hội và quản trị.</p></details>
+<details><summary>CBAM</summary><p>Cơ chế điều chỉnh biên giới carbon của Liên minh châu Âu: hàng nhập khẩu phải tính đến lượng khí thải carbon tạo ra khi sản xuất.</p></details>
+<details><summary>GOTS</summary><p>Tiêu chuẩn dệt may hữu cơ toàn cầu, đánh giá từ nguyên liệu đến quy trình sản xuất.</p></details>
+<details><summary>OEKO-TEX</summary><p>Chứng nhận kiểm tra sản phẩm dệt may không chứa các chất độc hại vượt mức cho phép.</p></details>
+<details><summary>Greenwashing</summary><p>Quảng bá là “xanh” nhưng thực tế không có bằng chứng hoặc chỉ làm hình thức.</p></details>
+<details><summary>Upcycling</summary><p>Biến đồ cũ hoặc vải thừa thành sản phẩm mới có giá trị hơn.</p></details>
+</section>
+
+<footer class="foot" id="lienhe">
+<h2>Cùng làm nhé</h2>
+<p>Đề án môn học Các ngành công nghiệp Văn hóa - Lĩnh vực Thời trang<br>☎️ Hotline: <a href="tel:0396397853">0396397853</a> (Mai Thị Huyền Anh)</p>
+<a class="pill" href="https://www.facebook.com/quantrangvangdanh.lucsac/" target="_blank" rel="noopener">💥 Fanpage</a><a class="pill" href="https://quantrangvangdanh.my.canva.site/quantrangvangdanhlucsac" target="_blank" rel="noopener">📺 Website</a><a class="pill" href="mailto:hello@example.com">Gửi email</a><a class="pill" href="#top">Lên đầu trang</a>
+<p class="src">Nguồn: Phạm Bích Huyền, Đặng Hoài Thu (2014), Giáo trình Các ngành công nghiệp văn hóa; phỏng vấn đại diện Tổng công ty 28 (2026); VietNamNet (2026); VNR500. Đây là website giáo dục phi lợi nhuận.</p>
+</footer>
+
+<script>
+var F=[
+{n:"Sợi tre",d:"Mềm, thoáng, thấm hút tốt, thường dùng cho áo công sở và đồ mặc hằng ngày.",t:[["Độ thoáng",5],["Độ bền",3],["Mức giá",3],["Tác động môi trường",3]],u:"Mát, mềm, kháng khuẩn tự nhiên.",x:"Nhiều loại sợi tre được xử lý bằng hóa chất, cần hỏi rõ quy trình.",c:"Giặt nước mát, vắt nhẹ."},
+{n:"Sợi sen",d:"Chất liệu hiếm, làm từ cuống sen, nhẹ và mát, mang đậm bản sắc Việt.",t:[["Độ thoáng",5],["Độ bền",3],["Mức giá",5],["Tác động môi trường",4]],u:"Nhẹ, mát, câu chuyện văn hóa riêng.",x:"Sản lượng thấp, thủ công nên giá cao.",c:"Giặt tay nhẹ, tránh vắt mạnh."},
+{n:"Sợi chuối",d:"Làm từ thân cây chuối, tận dụng phụ phẩm nông nghiệp.",t:[["Độ thoáng",4],["Độ bền",4],["Mức giá",3],["Tác động môi trường",4]],u:"Tận dụng phụ phẩm, khá bền.",x:"Cảm giác hơi cứng hơn, ít sản phẩm trên thị trường.",c:"Giặt tay hoặc chế độ nhẹ."},
+{n:"Tơ tằm",d:"Chất liệu truyền thống của Việt Nam, mềm bóng và sang.",t:[["Độ thoáng",4],["Độ bền",3],["Mức giá",5],["Tác động môi trường",3]],u:"Mềm, nhẹ, truyền thống lâu đời.",x:"Chăm sóc kỹ, giá cao; cần tìm hiểu cách nuôi tằm.",c:"Giặt tay, không phơi nắng gắt."},
+{n:"Đũi",d:"Vải dệt từ tơ tằm có bề mặt thô mộc, mát và đậm chất làng nghề.",t:[["Độ thoáng",5],["Độ bền",3],["Mức giá",3],["Tác động môi trường",4]],u:"Mát, thoải mái, phong cách mộc.",x:"Dễ nhăn, bề mặt không mịn như lụa.",c:"Giặt nhẹ, là ở nhiệt độ thấp."},
+{n:"Thổ cẩm",d:"Vải dệt tay của các dân tộc, họa tiết mang ý nghĩa văn hóa.",t:[["Độ thoáng",3],["Độ bền",5],["Mức giá",4],["Tác động môi trường",4]],u:"Bền, họa tiết độc đáo, hỗ trợ nghệ nhân.",x:"Giá cao, dễ phai màu nếu giặt chung.",c:"Giặt tay riêng, tránh chất tẩy mạnh."}];
+var tabs=document.getElementById("tabs"),body=document.getElementById("fbody");
+function dots(n){var s="";for(var i=1;i<=5;i++)s+='<i class="'+(i<=n?"on":"")+'"></i>';return '<span class="dots" aria-label="'+n+' trên 5">'+s+'</span>'}
+function show(i){var f=F[i];Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j==i)});
+body.innerHTML='<div><h3>'+f.n+'</h3><p>'+f.d+'</p><p><b>Chăm sóc:</b> '+f.c+'</p><div class="pc"><div class="u"><b>Ưu</b><br>'+f.u+'</div><div class="n"><b>Hạn chế</b><br>'+f.x+'</div></div></div><table>'+f.t.map(function(r){return"<tr><th>"+r[0]+"</th><td>"+dots(r[1])+"</td></tr>"}).join("")+"</table>"}
+F.forEach(function(f,i){var b=document.createElement("button");b.textContent=f.n;b.setAttribute("role","tab");b.onclick=function(){show(i)};tabs.appendChild(b)});show(0);
+
+var Q=[["Bạn mua quần áo mới thường xuyên cỡ nào?",["Mỗi tuần, thấy đẹp là mua",0],["Mỗi tháng vài món",1],["Vài lần mỗi mùa",2],["Chỉ khi thật cần",3]],
+["Trước khi mua, bạn có xem chất liệu trên nhãn không?",["Chưa bao giờ",0],["Thỉnh thoảng",1],["Thường xuyên",2],["Luôn luôn, và hỏi cả nguồn gốc",3]],
+["Áo bị tuột chỉ hoặc đứt nút, bạn làm gì?",["Bỏ luôn",0],["Để đó, quên mất",1],["Tự khâu lại",2],["Mang ra tiệm sửa hoặc biến tấu",3]],
+["Đồ không còn mặc, bạn xử lý thế nào?",["Vứt đi",0],["Nằm đáy tủ",1],["Cho bạn bè hoặc người thân",2],["Swap, bán lại hoặc upcycle",3]],
+["Thấy nhãn “eco-friendly” trên áo, bạn nghĩ gì?",["Chắc xanh thật rồi",0],["Hơi tò mò",1],["Tìm hiểu thêm",2],["Tìm chứng nhận cụ thể rồi mới tin",3]]];
+var R=[["Tân binh mê sắm","Bạn đang ở bước đầu. Thử thách 30 ngày mặc lại, không mua mới là khởi đầu hay đấy."],["Người mặc có ý thức","Bạn đã bắt đầu để ý. Thử thêm việc sửa đồ hoặc đi một buổi swap nhé."],["Chiến thần tái sử dụng","Tủ đồ của bạn khá xanh rồi. Hãy chia sẻ mẹo với bạn bè."],["Đại sứ thời trang xanh","Bạn là hình mẫu. Hãy đăng outfit của mình lên cộng đồng."]];
+var qi=0,sc=0,box=document.getElementById("quizbox");
+function render(){if(qi>=Q.length){var r=R[Math.min(3,Math.floor(sc/4))];box.innerHTML='<h3>'+r[0]+'</h3><p>'+r[1]+'</p><p>Điểm: '+sc+'/15</p><button class="pill" id="again">Làm lại</button>';document.getElementById("again").onclick=function(){qi=0;sc=0;render()};return}
+var q=Q[qi];box.innerHTML='<div class="bar"><i style="width:'+(qi/Q.length*100)+'%"></i></div><h3>'+q[0]+'</h3>'+q.slice(1).map(function(o,i){return'<button class="opt" data-v="'+o[1]+'">'+o[0]+'</button>'}).join("");
+Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(b){b.onclick=function(){sc+=+b.dataset.v;qi++;render()}})}
+render();
+
+(function(){var L=document.getElementById("leaves"),C=["#fff3d6","#f4769b","#f6b81a","#9be08a"];
+for(var i=0;i<12;i++){var e=document.createElement("i");e.className="lf";var s=12+Math.random()*14;
+e.style.cssText="left:"+Math.random()*100+"%;width:"+s+"px;height:"+s*1.6+"px;background:"+C[i%4]+";--dx:"+(Math.random()*160-80)+"px;animation-duration:"+(16+Math.random()*16)+"s;animation-delay:-"+Math.random()*30+"s";L.appendChild(e)}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.15});
+document.querySelectorAll(".wrap h2,.lead,.steps li,.tip,.box,.fiber,.quiz,details,.note").forEach(function(e,i){e.classList.add("rv");e.style.transitionDelay=(i%5)*70+"ms";io.observe(e)});
+function sc(){var d=document.documentElement,m=d.scrollHeight-innerHeight;d.style.setProperty("--p",(m>0?scrollY/m*100:0)+"%")}
+addEventListener("scroll",sc,{passive:true});sc()})();
+
+
+</script>
+</body>
+</html>
